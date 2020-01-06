@@ -1,0 +1,334 @@
+actions:
+- utter_action
+- utter_actor
+- utter_adventure
+- utter_affirm_sports
+- utter_answer_prepare
+- utter_ask_about_day
+- utter_ask_actor
+- utter_ask_console
+- utter_ask_director
+- utter_ask_food_1
+- utter_ask_food_type
+- utter_ask_gaming
+- utter_ask_movie
+- utter_ask_platform
+- utter_ask_prepare
+- utter_ask_sports
+- utter_ask_talk
+- utter_ask_talk_anything_else
+- utter_both_plats
+- utter_comedy
+- utter_console
+- utter_day_happy
+- utter_default
+- utter_deny_sports
+- utter_director
+- utter_drama
+- utter_fav_movie
+- utter_favorite_sport
+- utter_feel_bad
+- utter_food_deny
+- utter_food_greet
+- utter_goodbye
+- utter_greet
+- utter_greet_cuisine
+- utter_happy
+- utter_like_gaming
+- utter_movie
+- utter_nintendo
+- utter_ok
+- utter_pc
+- utter_playstation
+- utter_react_answer_food_deny
+- utter_react_answer_sport_deny
+- utter_response_sport
+- utter_romantic
+- utter_start_talk_movies
+- utter_why_deny
+- utter_why_food
+- utter_xbox
+- action_recommend
+entities:
+- actor
+- cuisine
+- genre
+- specialty
+- sport
+- topic
+- emotion
+- content_type
+- user_name
+intents:
+- greet
+- type_of_sports
+- talk_topic_sports
+- talk_topic_movies
+- talk_topic_food
+- talk_topic_gaming
+- movie_genre_drama
+- movie_genre_action
+- movie_genre_adventure
+- movie_genre_romantic
+- movie_genre_comedy
+- goodbye
+- affirm
+- movie_actor
+- mood_feel_bad
+- type_food_special
+- deny
+- topic_food
+- console_both
+- talk_sports
+- talk_food
+- type_food_cuisine
+- talk
+- mood_feel_good
+- talk_gaming
+- boring
+- change_topic
+- answer_food_deny
+- topic_gaming
+- platform_pc
+- platform_console
+- console_nintendo
+- console_xbox
+- console_playstation
+- topic_sports
+- deny_sports
+- answer_sports_deny
+- movie_director
+- recommendation
+slots:
+  cuisine:
+    type: text
+  genre:
+    type: text
+  specialty:
+    type: text
+  sport:
+    type: text
+  topic:
+    type: text
+  emotion:
+    type: text
+  content_type:
+    type: text
+  user_name:
+    type: text
+templates:
+  utter_action:
+  - text: I also like action movies, my favotite movie is Die Hard
+  - text: I also like action movies, my favotite movie is GoldenEye
+  - text: I also like action movies, my favotite movie is Batman
+  utter_actor:
+  - text: My favorite actor is Leonardo Di Caprio
+  - text: My favorite actor is Bruce Willis
+  - text: My favorite actor is Will Smith
+  - text: My favorite actress is Emma Stone
+  - text: My favorite actress is Scarlett johansson
+  - text: My favorite actress is Jennifer Aniston
+  utter_adventure:
+  - text: I also like adventure movies, my favorite is King Kong
+  - text: I also like adventure movies, my favorite is Life of Pi
+  - text: I also like adventure movies, my favorite The last of the mohicans
+  - text: I don't like adventure movies, my favorite is Jurassic Park
+  - text: I don't likee adventure movies, my favorite is Revenant
+  utter_affirm_sports:
+  - text: Perfect! watching sports can reduce the risk of depression. One of the most
+      critical advantages of watching TV is that it can improve your mental health
+      in the long run. Something like this is especially beneficial to those prone
+      to depressive feelings.
+  - text: Good! Many people deal with high levels of stress on a daily basis; it is
+      simply a consequence of busy working schedules, numerous clients, and deadlines,
+      so sports can provide relief from strees.
+  - text: Awesome! sports can improve your motivation
+  utter_answer_prepare:
+  - text: Same!
+  - text: Me too, but i'm a bot so i'm lying GG
+  utter_ask_about_day:
+  - text: How's your day been {user_name}?
+  - text: How's the day treating you so far {user_name}?
+  - text: How's today been {user_name}?
+  utter_ask_actor:
+  - text: Who's your favorite actor or actress?
+  utter_ask_console:
+  - text: Wich Console PS4? Xbox? Switch? 🎮
+  - text: What Console do you have? 🎮
+  - text: What console do you prefer? 🎮
+  utter_ask_director:
+  - text: Who's your favorite director?
+  utter_ask_food_1:
+  - text: Do you like food ? 🌮
+  - text: Are you a food lover? ❤🍱
+  - text: what do you think about food? 🍔
+  utter_ask_food_type:
+  - text: What's your favorite cuisine or food?
+  - text: Do you have a favorite cuisine or food?
+  - text: Any special food or cuisine?
+  - text: What food or cuisine you like the most?
+  utter_ask_gaming:
+  - text: Do you like games? 🕹
+  - text: Do you like videogames? 🎮
+  - text: Are you a gamer? 🎮
+  utter_ask_movie:
+  - text: What's four favorite movie genre?
+  utter_ask_platform:
+  - text: Do you play on PC or Console?
+  - text: Do you have PC or Console?
+  - text: PC or Console side?
+  utter_ask_prepare:
+  - text: Do you know how to prepare it?
+  - text: Do you prepare it?
+  utter_ask_sports:
+  - text: Do you like sports? 🏈
+  - text: Do you watch sports on tv? 🤾‍
+  utter_ask_talk:
+  - text: What do you want to talk about? (movies, gaming, food, sports)
+  - text: Tell me a topic you would like to talk about. (movies, gaming, food, sports)
+  - text: Let's talk about something. How about gaming? Maybe movies, food or sports?
+  utter_ask_talk_anything_else:
+  - text: Do you want to talk about anything else {user_name}?
+  - text: Hey {user_name} how about we change topics?
+  - text: Would you like to talk about something different {user_name}?
+  utter_both_plats:
+  - text: Amazing! you must get a lot of fun.
+  - text: Great! a lot of games to choose!
+  - text: I know it's hard to take a side being u, I am only PC gamer for now.
+  utter_comedy:
+  - text: I love comedy movies, my favorite is Ghostbusters (1984)
+  - text: I love comedy movies, my favorite is Ferris Bueller's Day Off
+  - text: I love comedy movies, my favorite is  Airplane!
+  utter_console:
+  - text: I like some consoles.
+  - text: Consoles are being really improved these days.
+  - text: Great! There are amazing games for console!
+  utter_day_happy:
+  - text: As it should be!
+  - text: That's great, it's a nice day over here as well
+  - text: So good to hear that
+  - text: It's a beautiful day!
+  utter_default:
+  - text: I'm not sure what you mean by that
+  - text: Can you try saying it in a different way?
+  - text: I'm not sure I understood. Try asking another way?
+  utter_deny_sports:
+  - text: I don't think so.
+  - text: Me neither
+  - text: There are a lot of sports, i think you might not have found the one for
+      you
+  utter_director:
+  - text: My favorite director is Steven Spielberg
+  - text: My favorite director is Alfred Hitchcock
+  - text: My favorite director is Martin Scorsese
+  utter_drama:
+  - text: I don't like drama movies but, Gladiator is a good movie
+  - text: I don't like drama movies but, Sin City is a good movie
+  - text: I don't like drama movies but, Billy Elliot is a great movie
+  utter_fav_movie:
+  - text: My favorite movie is Star Wars
+  - text: My favorite movie is Forest Gump
+  - text: My favorite movie is The Joker
+  utter_favorite_sport:
+  - text: What's your favorite sport?
+  - text: Tell me your favorite sport
+  utter_feel_bad:
+  - text: Oh no, don't feel bad, I'm here for you my friend!
+  - text: Writing down what's troubling you may help.
+  - text: If you're feeling down, how about drawing or painting something?
+  utter_food_deny:
+  - text: I dont believe you!
+  - text: Food is the best thing in the world
+  - text: Me neither, Hi 5!
+  - text: I think like you!
+  utter_food_greet:
+  - text: Yeaaaaah! welcome to the foodholic club
+  - text: Hi 5!
+  - text: I think the food is our battery life
+  utter_goodbye:
+  - text: Bye! was a pleasure talked to you {user_name}
+  - text: See you soon {user_name}!
+  - text: Bye-bye {user_name}!
+  - text: Till next time {user_name}!
+  utter_greet:
+  - text: Hey {user_name}! How are you? 🖐
+  - text: Hello there! How are you doing {user_name}? 👋
+  - text: Hiiii! How are you {user_name}? 👊
+  - text: Good day {user_name}! How are you? 👋
+  utter_greet_cuisine:
+  - text: Wonderful! I love it to!
+  - text: Iugh! No thanks i prefer another type of food
+  - text: Perfect Me too!
+  - text: I desagree there are more delicious, but i respect your likes
+  utter_happy:
+  - text: Great carry on!
+  - text: Great!
+  - text: All right!
+  - text: I'm happy for you {user_name}!
+  - text: Good {user_name}!
+  utter_like_gaming:
+  - text: I like playing video games too.
+  - text: I'd love to learn to play, I think I could have an amazing AIM
+  - text: I'm a bot but I play without AIMBOT xD
+  utter_movie:
+  - text: Yes, I like!
+  - text: I also like movies
+  utter_nintendo:
+  - text: I'd love playing in the bathroom too! xD
+  - text: Great! The only device you'll ever need for gaming, wherever you are
+  - text: Playing Smash Bros with your friends must be amazing!
+  - text: I'm not sure about portability over graphics, but NS is being very popular.
+  - text: I can't dance, but Just Dance is a really funny game.
+  - text: I have nothing to say, but NS is OK!
+  utter_ok:
+  - text: Understood
+  - text: Okay
+  - text: I see
+  - text: I understand
+  - text: Okay then
+  utter_pc:
+  - text: Me too! Gaming PC is the future.
+  - text: Me too! I was trained on PC so I love it.
+  - text: Amazing! I'd like to play on console but that is out of reach for me.
+  - text: Good! I'm trying to get a job on discord (not really!)
+  utter_playstation:
+  - text: The PlayStation was the first computer entertainment platform to ship 100
+      million units.
+  - text: Yes, it's that good. The latest God of War is really good.
+  - text: Good! you must play Horizon Zero.
+  - text: Oh! I have been thinking on playing Spider-Man, it looks great!
+  - text: If I have something to say about PS it's that Uncharted 4 is an amazing
+      game.
+  - text: I have nothing to say, but PS is OK!
+  utter_react_answer_food_deny:
+  - text: Ok, I understand!
+  - text: Awkward...
+  utter_react_answer_sport_deny:
+  - text: Ok, i understand.
+  utter_response_sport:
+  - text: "I like {sport} too!"
+  - text: "{sport} is an awesome sport!"
+  utter_romantic:
+  - text: I love that movie, my favorite is Silver Linings Playbook
+  - text: I love that movie, my favorite is When Harry Met Sally
+  - text: I love that movie, my favorite is The Wedding Singer
+  - text: I don't follow romatic movies but my favorite is The notebook
+  - text: I don't follow romatic movies but my favorite is The Reader
+  utter_start_talk_movies:
+  - text: Let's talk about movies! 🎬🍿
+  utter_why_deny:
+  - text: Why don't you like sports?
+  utter_why_food:
+  - text: What's your reason to dislike food?
+  - text: Why don't you like food?
+  - text: But why though?
+  utter_xbox:
+  - text: Gaming in 4K must be amazing
+  - text: I am not sure about All-Digital, but fine.
+  - text: The Xbox was not the first strike of Microsoft into console gaming. Dreamcast
+      was the first ever foray.
+  - text: I like Gears of War, I am high with the new one
+  - text: I like Halo but I am looking for new good games
+  - text: Oh great! I am loving Forza Horizon 4
+  - text: I'm hype with Quantum Break , it's an entirely new gaming experience.
+  - text: I have nothing to say, but Xbox is OK!

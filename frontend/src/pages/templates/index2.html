@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="shortcut icon" type="image/png" href="static/robot-face-microsoft.png"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/image-picker/image-picker.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="static/image-picker/image-picker.js"></script>
+
+    <title>Chatbot</title>
+</head>
+<!-- <body class="h-100"> -->
+<body style="height: 90%;">
+  <div class="row show-div-1" style="margin: 20px;">
+    <div class="col-sm-3">
+    </div>
+
+    <div class="col-sm-6">
+      <div class="container m-3">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#login">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#signin">Sign In</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane container active" id="login">
+          <form>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 100px;">Username</span>
+              </div>
+              <input type="text" class="form-control userLogin">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 100px;">Password</span>
+              </div>
+              <input type="password" class="form-control passwordLogin">
+            </div>
+            <div class="input-group mb-3 justify-content-center">
+              <button type="button" class="btn btn-primary log-in-button" style="width: 80px;">Log In</button>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane container fade" id="signin">
+          <form>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 100px;">Username</span>
+              </div>
+              <input type="text" class="form-control userSignin">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" style="width: 100px;">Password</span>
+              </div>
+              <input type="password" class="form-control passwordSignin">
+            </div>
+          </form>
+          <div class="container">
+            <div class="row mt-3">
+              <p class="font-weight-normal">Selct your avatar</p>
+            </div>
+            <div class="row">
+              <select class="image-picker show-html">
+                <option data-img-src="static/Avatar/alien.png" data-img-class="first" data-img-alt="alien" value="alien">alien</option>
+                <option data-img-src="static/Avatar/dog.png" data-img-alt="dog" value="dog">dog</option>
+                <option data-img-src="static/Avatar/ghost.png" data-img-alt="ghost" value="ghost">ghost</option>
+                <option data-img-src="static/Avatar/icecream.png" data-img-alt="icecream" value="icecream">icecream</option>
+                <option data-img-src="static/Avatar/monkey.png" data-img-alt="monkey" value="monkey">monkey</option>
+                <option data-img-src="static/Avatar/mouse.png" data-img-alt="mouse" value="mouse">mouse</option>
+                <option data-img-src="static/Avatar/panda.png" data-img-alt="panda" value="panda">panda</option>
+                <option data-img-src="static/Avatar/person1.png" data-img-alt="person1" value="person1">person1</option>
+                <option data-img-src="static/Avatar/person2.png" data-img-alt="person2" value="person2">person2</option>
+                <option data-img-src="static/Avatar/person3.png" data-img-alt="person3" value="person3">person3</option>
+                <option data-img-src="static/Avatar/person4.png" data-img-alt="person4" value="person4">person4</option>
+                <option data-img-src="static/Avatar/person5.png" data-img-alt="person5" value="person5">person5</option>
+                <option data-img-src="static/Avatar/person6.png" data-img-alt="person6" value="person6">person6</option>
+                <option data-img-src="static/Avatar/person7.png" data-img-alt="person7" value="person7">person7</option>
+                <option data-img-src="static/Avatar/pig.png" data-img-alt="pig" value="pig">pig</option>
+                <option data-img-src="static/Avatar/unicorn.png" data-img-alt="unicorn" data-img-class="last" value="unicorn">unicorn</option>
+              </select>
+            </div>
+          </div>
+          <form>
+            <div class="input-group mb-3 mt-3 justify-content-center">
+              <button type="button" class="btn btn-primary sign-in-button" style="width: 80px;">Sign In</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+    </div>
+  </div>
+
+
+  <div class="row show-div-2 h-100" style="margin: 20px; display: none;">
+    <div class="col-sm-3">
+      <div class="row" style="justify-content: center; margin-top: 35%;">
+        <img src="static/BotEmojis/normal.png" style="max-width: 80%;">
+      </div>
+      <div class="row mt-3" style="justify-content: center;">
+        <h2 class="font-weight-bold chatbot_name"></h2>
+      </div>
+    </div>
+    <div class="col-sm-6" style="position: relative;">
+        <div class="mr-3 ml-3 p-3 rounded border row overflow-auto conversation" style="height: 75%; position: absolute; top: 0; left: 0; right: 0;">
+            <!-- CHAT -->
+        </div>
+        <div class="mr-3 ml-3 mt-3 row" style="position: absolute; bottom: 0; left: 0; right: 0;">
+          <div class="container rounded border p-3">
+            <div class="row">
+              <input type="text" class="text-input ml-3 mr-3 form-control">
+            </div>
+            <div class="row">
+              <button type="button" class="btn btn-primary send-button ml-3 mt-3">Send</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="row" style="justify-content: center; margin-top: 35%;">
+        <img class="avatar" src="static/Avatar/person1.png" style="max-width: 80%;">
+      </div>
+      <div class="row mt-3" style="justify-content: center;">
+        <h2 class="font-weight-bold user_name"></h2>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script type="text/javascript">
+    let avatar_name;
+    let user_name;
+
+    // var messageBody = document.querySelector(".conversation");
+    // messageBody.scrollTop = messageBody.scrollHeight - messageBody.clientHeight;
+
+    function showMessage(msg, avatar) {
+      return `<div class="card mb-3" style="width: 100%; height: fit-content; background: #0078ff; position: relative;">
+        <div class="row no-gutters">
+          <div class="col">
+            <div class="card-body">
+              <p class="card-text font-weight-bold text-right" style="color: white;">${msg}</p>
+            </div>
+          </div>
+          <div class="col" style="max-width: 60px;">
+            <img src="static/Avatar/${avatar}.png" class="card-img" style="max-width: 60px;">
+          </div>
+        </div>
+      </div>`;
+      }
+
+    function log_sign_in(action) {
+      console.log(action);
+      $.ajax({
+          url: "http://localhost:8000",
+          type: "POST",
+          contentType: "application/json",
+          dataType: "json",
+
+          data: JSON.stringify({
+              "sender": (action == "log-in") ? $('.userLogin').val(): $('.userSignin').val(),
+              "password": (action == "log-in") ? $(".passwordLogin").val(): $(".passwordSignin").val(),
+              "icon": $(".image-picker").val(),
+          }),
+          success: function(resp) {
+              // username = $('.userInput').val();
+              $(".show-div-1").hide();
+              $(".show-div-2").show();
+              $(".conversation").html(resp["html"]);
+              avatar_name = (action == "log-in") ? resp["icon"]: $(".image-picker").val();
+              user_name = (action == "log-in") ? $('.userLogin').val(): $('.userSignin').val();
+              $(".chatbot_name").html(resp["chatbot_name"]);
+              $(".avatar").attr("src", `static/Avatar/${avatar_name}.png`);
+              $(".user_name").html(user_name);
+          },
+          error: function (resp) {
+              alert("Incorrect password");
+          }
+      });
+    }
+
+    // $(".show-div-1").hide();
+    // $(".show-div-2").show();
+    $(".show-div-2").hide();
+    $(".show-div-1").show();
+
+    $(".image-picker").imagepicker();
+    $(".image_picker_image").css("max-width", "48px");
+
+    $('body').on("click", ".log-in-button", function(){
+      log_sign_in("log-in");
+    });
+
+    $('body').on("click", ".sign-in-button", function(){
+      log_sign_in("sign-in");
+    });
+
+    function log_in_click(e) {
+      var key = e.which;
+      if(key == 13)  // the enter key code
+      {
+        $('.log-in-button').click();
+        return false;
+      }
+    }
+
+    $('.passwordLogin').keypress(function (e) {
+      log_in_click(e);
+    });
+
+    $('.userLogin').keypress(function (e) {
+      log_in_click(e);
+    });
+
+
+    function sign_in_click(e) {
+      var key = e.which;
+      if(key == 13)  // the enter key code
+      {
+        $('.sign-in-button').click();
+        return false;
+      }
+    }
+
+    $('.passwordSignin').keypress(function (e) {
+      sign_in_click(e);
+    });
+
+    $('.userSignin').keypress(function (e) {
+      sign_in_click(e);
+    });
+
+
+
+    $('body').on("click", ".send-button", function(){
+        $('.conversation').append(showMessage($(".text-input").val(), avatar_name));
+        // $('#ol').append(
+        //   '<li style="color:red;">' + $("#text").val() + '</li>'
+        // );
+        $.ajax({
+            url: "http://localhost:8000/send",
+            type: "POST",
+            contentType: "application/json",
+            dataType : "json",
+
+            data: JSON.stringify({
+                "sender": user_name,
+                "message": $(".text-input").val(),
+            }),
+            success: function(resp){
+                // $('.conversation').on('click',  function() {
+                // $('#text').val(""),
+                // $('#ol').append(resp["html"])
+                // });
+                $('.text-input').val("");
+                $('.conversation').append(resp["html"]);
+        },
+      });
+    });
+    $('.text-input').keypress(function (e) {
+      var key = e.which;
+      if(key == 13)  // the enter key code
+      {
+        $('.send-button').click();
+        return false;
+      }
+    });
+
+  </script>
+</body>

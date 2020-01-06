@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+    frontend:
+        build: frontend
+        ports:
+            - "8000:8000"
+
+    backend:
+        build: backend
+
+    rasa:
+        build: rasa
+        ports:
+            - "5005:5005"
+
+    database-service:
+        build: database-service
+
+    database:
+        image: mongo
+        ports:
+            - "27017:27017"

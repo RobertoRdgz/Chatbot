@@ -1,0 +1,26 @@
+language: "en"
+
+pipeline:
+ - name: "SpacyNLP"
+   model: "en"
+ - name: "SpacyTokenizer"
+ - name: "CRFEntityExtractor"
+ - name: "SpacyFeaturizer"
+ - name: "SklearnIntentClassifier"
+ - name: "emotion.EmotionClassifier"
+
+policies:
+  - name: "KerasPolicy"
+    epochs: 100
+    featurizer:
+    - name: MaxHistoryTrackerFeaturizer
+      max_history: 5
+      state_featurizer:
+        - name: BinarySingleStateFeaturizer
+  - name: "MemoizationPolicy"
+    max_history: 5
+  - name: "FallbackPolicy"
+    nlu_threshold: 0.2
+    core_threshold: 0.2
+    fallback_action_name: "action_default_fallback"
+  - name: "MappingPolicy"

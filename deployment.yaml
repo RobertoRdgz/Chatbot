@@ -1,0 +1,206 @@
+# FRONTEND
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  
+spec:
+  selector:
+    app: front-end
+
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: one-label
+    test: one-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front-end
+  template:
+    metadata:
+      labels:
+        app: front-end
+    spec:
+      containers:
+      - name: my-front
+        image: frontend
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8000
+---
+# BACKEND
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+spec:
+  selector:
+    app: back-end
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: LoadBalancer
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    app: one-label
+    test: one-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: back-end
+  template:
+    metadata:
+      labels:
+        app: back-end
+    spec:
+      containers:
+      - name: my-back
+        image: backend
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5000
+
+#RASA 
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: rasa
+spec:
+  selector:
+    app: rasa
+  ports:
+    - protocol: TCP
+      port: 5005
+      targetPort: 5005
+  type: LoadBalancer
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rasa
+  labels:
+    app: one-label
+    test: one-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rasa
+  template:
+    metadata:
+      labels:
+        app: rasa
+    spec:
+      containers:
+      - name: rasa
+        image: rasa
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 5005
+
+--- 
+#MONGO
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+spec:
+  selector:
+    app: mongo-db
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
+  type: LoadBalancer
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-db
+  labels:
+    app: one-label
+    test: one-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-db
+  template:
+    metadata:
+      labels:
+        app: mongo-db
+    spec:
+      containers:
+      - name: my-mongo
+        image: mongo
+        ports: 
+        - containerPort: 27017
+
+--- 
+# database-service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: database-service
+spec:
+  selector:
+    app: database-service
+  ports:
+    - protocol: TCP
+      port: 5004
+      targetPort: 5004
+  type: LoadBalancer
+
+--- 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database-service
+  labels:
+    app: one-label
+    test: one-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database-service
+  template:
+    metadata:
+      labels:
+        app: database-service
+    spec:
+      containers:
+      - name: database-service
+        image: database-service
+        imagePullPolicy: Never
+        ports: 
+        - containerPort: 5004
