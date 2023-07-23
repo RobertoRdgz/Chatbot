@@ -1,6 +1,6 @@
 rasa==1.4.3
 spacy==2.2.1
 imgurpython
-nltk==3.4.5
+nltk==3.6.6
 pandas==0.25.2
 gunicorn
